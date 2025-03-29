@@ -26,11 +26,12 @@ const CercadorMunicipis = ({ onSelectMunicipi }) => {
 
     const handleSearch = (event) => {
         setSearch(event.target.value);
+        setShowList(true); // Mostrar la llista mentre l'usuari escriu
     };
 
     const handleSelect = (municipi) => {
         onSelectMunicipi(municipi);
-        setSearch(municipi.nom);
+        setSearch('');
         setShowList(false);
     };
 
@@ -40,6 +41,15 @@ const CercadorMunicipis = ({ onSelectMunicipi }) => {
 
     const handleBlur = () => {
         setTimeout(() => setShowList(false), 200); // Delay to allow click event to register
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            const selectedMunicipi = municipis.find(m => m.nom.toLowerCase() === search.toLowerCase());
+            if (selectedMunicipi) {
+                handleSelect(selectedMunicipi);
+            }
+        }
     };
 
     const filteredMunicipis = municipis.filter(m => m.nom.toLowerCase().includes(search.toLowerCase()));
@@ -55,6 +65,7 @@ const CercadorMunicipis = ({ onSelectMunicipi }) => {
                 onChange={handleSearch}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
+                onKeyDown={handleKeyDown}
                 placeholder="Cerca municipi..."
                 className="search-input"
             />
