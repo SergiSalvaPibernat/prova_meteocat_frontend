@@ -1,0 +1,41 @@
+/* PrediccioTaula.css */
+.table-container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th, .table-container td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table-container th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.table-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-container tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-container th:first-child, .table-container td:first-child {
+    text-align: left;
+}
+
+.table-container .highlight {
+    background-color: #e0f7fa;
+    font-weight: bold;
+}

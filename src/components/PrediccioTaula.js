@@ -5,7 +5,7 @@ const PrediccioTaula = ({ prediccio }) => {
 
     return (
         <div>
-            <h2>Predicció per {prediccio.codiMunicipi}</h2>
+            <h2>Predicció per {prediccio.nomMunicipi}</h2>
             <table>
                 <thead>
                     <tr>
