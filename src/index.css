@@ -1,13 +1,22 @@
+/* Estils globals per al cos de la pàgina */
 body {
-  margin: 0;
+  margin: 0; /* Elimina el marge per defecte al voltant del cos de la pàgina */
+  
+  /* Defineix la família tipogràfica per al text del cos */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+
+  /* Millora l'aspecte de les fonts en pantalles de Mac */
   -webkit-font-smoothing: antialiased;
+
+  /* Millora l'aspecte de les fonts en pantalles de Mac a Firefox */
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Estils per al text en etiquetes de codi */
 code {
+  /* Defineix una família tipogràfica monoespaciada per al codi */
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }

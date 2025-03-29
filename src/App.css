@@ -1,49 +1,57 @@
+/* Estil base per a l'aplicació */
 .App {
-  text-align: center;
+  text-align: center; /* Centra el contingut de l'aplicació */
 }
 
+/* Contenidor de la capçalera */
 .header-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+  display: flex; /* Utilitza flexbox per alinear els elements */
+  align-items: center; /* Centra verticalment els elements */
+  justify-content: center; /* Centra horitzontalment els elements */
+  margin-bottom: 20px; /* Espai inferior per separar del contingut */
 }
 
+/* Estil per al títol dins de la capçalera */
 .header-container h2 {
-  margin-right: 20px;
+  margin-right: 20px; /* Espai a la dreta per separar del logotip */
 }
 
+/* Estil per al logotip de l'aplicació */
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 40vmin; /* Ajusta la mida del logotip en funció de la mida de la pantalla */
+  pointer-events: none; /* Evita que el cursor interactuï amb el logotip */
 }
 
+/* Definició d'una animació per girar el logotip si l'usuari no té preferències de moviment reduït */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 20s linear; /* Fa girar el logotip de manera contínua */
   }
 }
 
+/* Estil per a la capçalera de l'aplicació */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #282c34; /* Fons fosc per a la capçalera */
+  min-height: 100vh; /* Garanteix que la capçalera cobreixi tota l'alçada de la pantalla */
+  display: flex; /* Utilitza flexbox per gestionar el contingut */
+  flex-direction: column; /* Col·loca els elements en columna */
+  align-items: center; /* Centra els elements horitzontalment */
+  justify-content: center; /* Centra els elements verticalment */
+  font-size: calc(10px + 2vmin); /* Ajusta la mida del text de manera responsiva */
+  color: white; /* Text en color blanc per contrastar amb el fons fosc */
 }
 
+/* Estil per als enllaços dins de l'aplicació */
 .App-link {
-  color: #61dafb;
+  color: #61dafb; /* Color blau característic de React */
 }
 
+/* Definició de l'animació per girar el logotip */
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg); /* Comença sense rotació */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Fa una volta completa */
   }
 }

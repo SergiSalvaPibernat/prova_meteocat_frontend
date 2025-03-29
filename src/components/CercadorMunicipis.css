@@ -1,45 +1,51 @@
+/* Contenidor principal del cercador */
 .search-container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-input {
-    width: calc(100% - 40px); /* Deixar espai per a la icona */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .search-icon {
-    margin-left: -35px; /* Posicionar la icona a la dreta de l'input */
-    cursor: pointer;
-    width: 24px; /* Ajustar la mida de la icona */
-    height: 24px; /* Ajustar la mida de la icona */
-  }
-  
-  .search-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-top: none;
-    background-color: white;
-    z-index: 1000;
-    border-radius: 0 0 4px 4px;
-  }
-  
-  .search-list li {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .search-list li:hover {
-    background-color: #f0f0f0;
-  }
+  position: relative; /* Necessari per a la posició absoluta de la llista de suggeriments */
+  width: 100%;
+  max-width: 400px; /* Amplada màxima per a la caixa de cerca */
+  display: flex;
+  align-items: center; /* Centra verticalment el contingut */
+}
+
+/* Camp de cerca (input) */
+.search-input {
+  width: calc(100% - 40px); /* Deixar espai per a la icona de cerca */
+  padding: 10px;
+  border: 1px solid #ccc; /* Vora de color gris clar */
+  border-radius: 4px; /* Cantonades arrodonides */
+  font-size: 16px; /* Mida del text */
+}
+
+/* Icona de cerca */
+.search-icon {
+  margin-left: -35px; /* Posiciona la icona dins de l'input */
+  cursor: pointer; /* Canvia el cursor a "mà" per indicar interacció */
+  width: 24px; /* Amplada de la icona */
+  height: 24px; /* Alçada de la icona */
+}
+
+/* Llista desplegable de suggeriments */
+.search-list {
+  position: absolute; /* Situació relativa al contenidor */
+  top: 100%; /* Situar-la just sota l'input */
+  left: 0;
+  right: 0;
+  max-height: 200px; /* Limita l'alçada per evitar que sigui massa llarga */
+  overflow-y: auto; /* Permet desplaçament vertical si hi ha molts resultats */
+  border: 1px solid #ccc; /* Mateixa vora que l'input */
+  border-top: none; /* Evita una vora doble amb l'input */
+  background-color: white; /* Assegura que el fons sigui visible */
+  z-index: 1000; /* Evita que altres elements la tapin */
+  border-radius: 0 0 4px 4px; /* Arrodoneix les cantonades inferiors */
+}
+
+/* Cada element de la llista de suggeriments */
+.search-list li {
+  padding: 10px;
+  cursor: pointer; /* Indica que els elements són seleccionables */
+}
+
+/* Canvi de color en passar el ratolí per sobre d'un element */
+.search-list li:hover {
+  background-color: #f0f0f0; /* Color de fons més clar */
+}
