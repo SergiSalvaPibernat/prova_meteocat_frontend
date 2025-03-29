@@ -30,11 +30,25 @@ const PrediccioTaula = ({ prediccio }) => {
         return prec !== null ? `${Math.round(prec)}%` : 's/d';
     };
 
+    const getPrecipitationIcon = (prec) => {
+        if (prec === null) return null;
+
+        const roundedPrec = Math.round(prec);
+
+        if (roundedPrec <= 25) {
+            return <img src="/sol.png" alt="Sol" className="weather-icon" />;
+        } else if (roundedPrec <= 60) {
+            return <img src="/sol_i_pluja.png" alt="Sol i Pluja" className="weather-icon" />;
+        } else {
+            return <img src="/pluja.png" alt="Pluja" className="weather-icon" />;
+        }
+    };
+
     return (
         <div className="table-container">
             <div className="table-header">
                 <p className="date">{formattedDate}</p>
-                <h2>Predicció per {prediccio.nomMunicipi}</h2>
+                <h2 className="centered-title">Predicció per {prediccio.nomMunicipi}</h2>
             </div>
             <table>
                 <thead>
@@ -51,19 +65,21 @@ const PrediccioTaula = ({ prediccio }) => {
                     <tr>
                         <td>Temp. Màxima</td>
                         {prediccio.prediccions.map((p, index) => (
-                            <td key={index} className={index < 2 ? 'highlight-column' : ''}>{formatTemperature(p.tempMax)}</td>
+                            <td key={index} className={`${index < 2 ? 'highlight-column' : ''} max-temp`}>{formatTemperature(p.tempMax)}</td>
                         ))}
                     </tr>
                     <tr>
                         <td>Temp. Mínima</td>
                         {prediccio.prediccions.map((p, index) => (
-                            <td key={index} className={index < 2 ? 'highlight-column' : ''}>{formatTemperature(p.tempMin)}</td>
+                            <td key={index} className={`${index < 2 ? 'highlight-column' : ''} min-temp`}>{formatTemperature(p.tempMin)}</td>
                         ))}
                     </tr>
                     <tr>
                         <td>Prob. Precipitació</td>
                         {prediccio.prediccions.map((p, index) => (
-                            <td key={index} className={index < 2 ? 'highlight-column' : ''}>{formatPrecipitation(p.probPrec)}</td>
+                            <td key={index} className={index < 2 ? 'highlight-column' : ''}>
+                                {formatPrecipitation(p.probPrec)} {getPrecipitationIcon(p.probPrec)}
+                            </td>
                         ))}
                     </tr>
                 </tbody>

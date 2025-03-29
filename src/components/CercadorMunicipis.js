@@ -52,6 +52,13 @@ const CercadorMunicipis = ({ onSelectMunicipi }) => {
         }
     };
 
+    const handleIconClick = () => {
+        const selectedMunicipi = municipis.find(m => m.nom.toLowerCase() === search.toLowerCase());
+        if (selectedMunicipi) {
+            handleSelect(selectedMunicipi);
+        }
+    };
+
     const filteredMunicipis = municipis.filter(m => m.nom.toLowerCase().includes(search.toLowerCase()));
 
     if (loading) return <div>Carregant municipis...</div>;
@@ -66,9 +73,10 @@ const CercadorMunicipis = ({ onSelectMunicipi }) => {
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 onKeyDown={handleKeyDown}
-                placeholder="Cerca municipi..."
+                placeholder="Cercar municipi"
                 className="search-input"
             />
+            <img src="/lupa.png" alt="Search" className="search-icon" onClick={handleIconClick} /> {/* Afegir la icona de lupa */}
             {showList && (
                 <ul className="search-list">
                     {filteredMunicipis.map(m => (

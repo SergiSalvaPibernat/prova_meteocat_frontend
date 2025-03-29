@@ -37,9 +37,12 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="App">
       <h1>Predicció Meteorològica</h1>
-      <CercadorMunicipis onSelectMunicipi={handleSelectMunicipi} />
+      <div className="header-container">
+        <h2>Introdueix-hi el municipi desitjat: </h2>
+        <CercadorMunicipis onSelectMunicipi={handleSelectMunicipi} />
+      </div>
       {loading ? <div>Carregant predicció...</div> : <PrediccioTaula prediccio={prediccio} />}
       {error && <div>{error}</div>}
     </div>

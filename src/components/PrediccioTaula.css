@@ -1,14 +1,15 @@
-/* PrediccioTaula.css */
 .table-container {
     margin: 20px auto;
-    width: 90%;
-    max-width: 800px;
+    width: 95%;
+    max-width: 1000px;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .table-header {
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -16,11 +17,18 @@
     font-size: 0.8em;
     color: #666;
     margin-bottom: 5px;
+    text-align: left;
 }
 
 .table-header h2 {
     margin: 0;
     font-size: 1.5em;
+    text-align: center;
+}
+
+.centered-title {
+    flex-grow: 1;
+    text-align: center;
 }
 
 .table-container table {
@@ -60,4 +68,19 @@
     font-size: 1.2em;
     font-weight: bold;
     background-color: #e0f7fa;
+}
+
+.max-temp {
+    color: red;
+}
+
+.min-temp {
+    color: blue;
+}
+
+.weather-icon {
+    width: 20px; /* Ajusta la mida segons necessitis */
+    height: 20px; /* Ajusta la mida segons necessitis */
+    margin-left: 5px; /* Espai entre el text i la icona */
+    vertical-align: middle; /* Alinea la icona amb el text */
 }
